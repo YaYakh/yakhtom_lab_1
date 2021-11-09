@@ -7,15 +7,10 @@ int main()
   int n = 0;
   double l = 0.0;
   double u = 0.0;
-  double sum = 0;
-  int pi = 1;
   double p = 0;
   double a = 0;
-
-  double* mas;
-  mas = (double*)malloc(n * sizeof(double));
-  int* mas2;
-  mas2 = (int*)malloc(n * sizeof(int));
+  double sum = 0;
+  int pi = 1;
 
   printf(" n = ");
   scanf_s(" %d", &n);
@@ -24,17 +19,23 @@ int main()
     return 0;
   }
 
-  printf(" min = ");
+  printf(" l = ");
   scanf_s(" %lf", &l);
 
-  printf(" max = ");
+  printf(" u = ");
   scanf_s(" %lf", &u);
 
-  if (l >= u) {
-    printf("error min >= max");
+  if (l > u) {
+    printf("error l > u");
     return 0;
   }
 
+  double* mas;
+  mas = (double*)malloc(n * sizeof(double));
+  int* mas2;
+  mas2 = (int*)malloc(n * sizeof(int));
+
+  
   for (int i = 0; i < n; i++)
   {
     p = (((((double)rand()) / RAND_MAX) * (u - l) + l) * 1000);
@@ -42,6 +43,7 @@ int main()
     mas2[i] = round(modf(mas[i], &a) * 1000);
   }
 
+  
   for (int i = 0; i < n; i++)
   {
     pi = 1;
@@ -56,7 +58,7 @@ int main()
     else
       sum = sum - mas[i];
   }
-  printf("\n\n sum = %.3lf", sum);
+  printf("\n\n%.3lf", sum);
 
   free(mas);
   return 0;
