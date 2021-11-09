@@ -13,20 +13,20 @@ int main()
   int pi = 1;
 
   printf(" n = ");
-  scanf_s(" %d", &n);
+  scanf_s("%d", &n);
   if (n <= 0) {
     printf("error n <= 0");
     return 0;
   }
 
-  printf(" l = ");
-  scanf_s(" %lf", &l);
+  printf(" min = ");
+  scanf_s("%lf", &l);
 
-  printf(" u = ");
-  scanf_s(" %lf", &u);
+  printf(" max = ");
+  scanf_s("%lf", &u);
 
   if (l > u) {
-    printf("error l > u");
+    printf("error min > max");
     return 0;
   }
 
