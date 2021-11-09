@@ -61,5 +61,6 @@ int main()
   printf("\n\n%.3lf", sum);
 
   free(mas);
+  free(mas2);
   return 0;
 }
